@@ -1,0 +1,8 @@
+{
+    "conventionalCommits.scopes": ["files", "deploy", "auth"],
+    "jest.jestCommandLine": "npm run test:vscode --",
+    "jest.runMode": "on-demand",
+    "jest.shell": "powershell",
+    "jest.debugMode": true
+  }
+  

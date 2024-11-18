@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+    mongodb:
+        image: mongo:latest
+        container_name: boilerplate_nestjs-mongo
+        hostname: boilerplate_nestjs-mongo
+        ports:
+            - 27017:27017
+        environment:
+            MONGO_INITDB_DATABASE: nestBoilerplateDB
+            MONGO_INITDB_ROOT_USERNAME: nestBoilerplate_mongo_admin
+            MONGO_INITDB_ROOT_PASSWORD: nestBoilerplate_mongo_password
+        volumes:
+            - '${DOCKER_MONGO_DBDIR:-./data/db}:/data/db'
+        restart: unless-stopped
+        networks:
+            - boilerplate_nestjs-network
+    redis:
+        container_name: boilerplate_nestjs-redis
+        image: redis:alpine
+        ports:
+            - 6379:6379
+
+networks:
+    boilerplate_nestjs-network:
+        name: boilerplate_nestjs-network
+        driver: bridge

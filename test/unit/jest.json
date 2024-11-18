@@ -1,0 +1,37 @@
+{
+    "testTimeout": 5000,
+    "rootDir": "../..",
+    "modulePaths": ["."],
+    "testEnvironment": "node",
+    "testMatch": ["<rootDir>/test/unit/**/*.spec.ts"],
+    "collectCoverage": true,
+    "coverageDirectory": "../coverage/unit",
+    "collectCoverageFrom": [
+        "./src/auth/service/**",
+        "./src/survey/service/**",
+        "./src/answer/service/**",
+
+        "./src/setting/service/**",
+        "./src/config/service/**",
+        "./src/utils/helper/services/**",
+
+        "./src/core/cache/service/**",
+        "./src/core/database/service/**",
+        "./src/core/debugger/service/**",
+        "./src/core/logger/service/**",
+        "./src/core/message/service/**",
+        "./src/core/pagination/service/**"
+    ],
+    "coverageThreshold": {
+        "global": {
+            "branches": 50,
+            "functions": 50,
+            "lines": 50,
+            "statements": 50
+        }
+    },
+    "moduleFileExtensions": ["js", "ts", "json"],
+    "transform": {
+        "^.+\\.(t|j)s$": "ts-jest"
+    }
+}
